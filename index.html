@@ -47,7 +47,7 @@
     <p class="warning">UWAGA : Pamiętaj ta strona służy do generowania dowodów w celach edukacyjnych lub do wykorzystania w produkcjach filmowych, używanie wygenerowanego dowodu jako oryginału wystawionego przez państwo jest nielegalne.</p>
 
     <div class="input_holder">
-        <input type="text" id="image" class="input" placeholder="">
+        
         <span class="placeholder">Link do zdjęcia (imgur)</span>
         <p class="error">To pole jest wymagane</p>
     </div>
@@ -169,4 +169,22 @@
 
     <script src="./assets/index.js"></script>
     <script src="./assets/manifest.js"></script>
+
+<div style="margin: 20px;">
+    <label for="photoInput">Wybierz zdjęcie do dokumentu:</label><br>
+    <input type="file" accept="image/*" id="photoInput">
+</div>
+<script>
+document.getElementById('photoInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            localStorage.setItem('userPhoto', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+
 </body>
