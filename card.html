@@ -11,17 +11,6 @@
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
-
-<img id="photoPreview" alt="Zdjęcie użytkownika" style="width: 100px; height: auto; border-radius: 8px; margin: 10px;">
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    const savedPhoto = localStorage.getItem('userPhoto');
-    if (savedPhoto) {
-        document.getElementById('photoPreview').src = savedPhoto;
-    }
-});
-</script>
-
     <div class="top_grid">
         <div class="action_grid">
             <img src="https://i.imgur.com/MBLAM9x.png" class="back_img">
@@ -133,7 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <p class="time_text" id="time"></p>
     <div class="id_image_data">
-        <img draggable="false" class="id_image" id="photoOnID" src="" alt="Zdjęcie użytkownika">
+        <img draggable="false" class="id_image" src="https://i.imgur.com/iIC6KW5.png">
         <div class="inset">
 
         </div>
@@ -238,16 +227,4 @@ window.addEventListener('DOMContentLoaded', () => {
     <script src="assets/bar.js"></script>
     <script src="assets/card.js?v=1.0"></script>
     <script src="assets/manifest.js"></script>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    const savedPhoto = localStorage.getItem('userPhoto');
-    if (savedPhoto) {
-        const photoOnID = document.getElementById('photoOnID');
-        if (photoOnID) {
-            photoOnID.src = savedPhoto;
-        }
-    }
-});
-</script>
 </body>
