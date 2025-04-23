@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <p class="time_text" id="time"></p>
     <div class="id_image_data">
-        <img draggable="false" class="id_image" src="https://i.imgur.com/iIC6KW5.png">
+        <img draggable="false" class="id_image" id="photoOnID" src="" alt="Zdjęcie użytkownika">
         <div class="inset">
 
         </div>
@@ -238,4 +238,16 @@ window.addEventListener('DOMContentLoaded', () => {
     <script src="assets/bar.js"></script>
     <script src="assets/card.js?v=1.0"></script>
     <script src="assets/manifest.js"></script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const savedPhoto = localStorage.getItem('userPhoto');
+    if (savedPhoto) {
+        const photoOnID = document.getElementById('photoOnID');
+        if (photoOnID) {
+            photoOnID.src = savedPhoto;
+        }
+    }
+});
+</script>
 </body>
